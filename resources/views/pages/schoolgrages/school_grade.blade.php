@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('css')
-
 @section('title')
     {{ trans('main_trans.School Grades') }}
 @stop
@@ -24,91 +23,23 @@
 <!-- breadcrumb -->
 @endsection
 @section('content')
-<!-- row -->
-{{-- <div class="row">
-    <div class="col-xl-12 mb-30">
-        <div class="card card-statistics h-100">
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table id="datatable" class="table table-striped table-bordered p-0">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>{{trans('school_grades_trans.Name')}}</th>
-                                <th>{{trans('school_grades_trans.Notes')}}</th>
-                                <th>{{trans('school_grades_trans.Processes')}}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                                <td>2011/04/25</td>
-                                <td>$320,800</td>
-                            </tr>
-                            <tr>
-                                <td>Hermione Butler</td>
-                                <td>Regional Director</td>
-                                <td>London</td>
-                                <td>47</td>
-                                <td>2011/03/21</td>
-                                <td>$356,250</td>
-                            </tr>
-                            <tr>
-                                <td>Lael Greer</td>
-                                <td>Systems Administrator</td>
-                                <td>London</td>
-                                <td>21</td>
-                                <td>2009/02/27</td>
-                                <td>$103,500</td>
-                            </tr>
-                            <tr>
-                                <td>Jonas Alexander</td>
-                                <td>Developer</td>
-                                <td>San Francisco</td>
-                                <td>30</td>
-                                <td>2010/07/14</td>
-                                <td>$86,500</td>
-                            </tr>
-                            <tr>
-                                <td>Shad Decker</td>
-                                <td>Regional Director</td>
-                                <td>Edinburgh</td>
-                                <td>51</td>
-                                <td>2008/11/13</td>
-                                <td>$183,000</td>
-                            </tr>
-                            <tr>
-                                <td>Michael Bruce</td>
-                                <td>Javascript Developer</td>
-                                <td>Singapore</td>
-                                <td>29</td>
-                                <td>2011/06/27</td>
-                                <td>$183,000</td>
-                            </tr>
-                            <tr>
-                                <td>Donna Snider</td>
-                                <td>Customer Support</td>
-                                <td>New York</td>
-                                <td>27</td>
-                                <td>2011/01/25</td>
-                                <td>$112,000</td>
-                            </tr>
-                        </tbody>
-
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
-<!-- row closed -->
 <div class="row">
     <div class="col-xl-12 mb-30">
         <div class="card card-statistics h-100">
             <div class="card-body">
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+                <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
+                    {{ trans('school_grades_trans.add_Grade') }}
+                </button>
+                <br><br>
                 <div class="table-responsive">
                     <table id="datatable" class="table table-striped table-bordered p-0">
                         <thead>
@@ -120,66 +51,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>61</td>
-                            </tr>
-                            <tr>
-                                <td>Garrett Winters</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>63</td>
-                            </tr>
-                            <tr>
-                                <td>Ashton Cox</td>
-                                <td>Junior Technical Author</td>
-                                <td>San Francisco</td>
-                                <td>66</td>
-                            </tr>
-                            <tr>
-                                <td>Cedric Kelly</td>
-                                <td>Senior Javascript Developer</td>
-                                <td>Edinburgh</td>
-                                <td>22</td>
-                            </tr>
-                            <tr>
-                                <td>Airi Satou</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>33</td>
-                            </tr>
-                            <tr>
-                                <td>Brielle Williamson</td>
-                                <td>Integration Specialist</td>
-                                <td>New York</td>
-                                <td>61</td>
-                            </tr>
-                            <tr>
-                                <td>Herrod Chandler</td>
-                                <td>Sales Assistant</td>
-                                <td>San Francisco</td>
-                                <td>59</td>
-                            </tr>
-                            <tr>
-                                <td>Rhona Davidson</td>
-                                <td>Integration Specialist</td>
-                                <td>Tokyo</td>
-                                <td>55</td>
-                            </tr>
-                            <tr>
-                                <td>Colleen Hurst</td>
-                                <td>Javascript Developer</td>
-                                <td>San Francisco</td>
-                                <td>39</td>
-                            </tr>
-                            <tr>
-                                <td>Sonya Frost</td>
-                                <td>Software Engineer</td>
-                                <td>Edinburgh</td>
-                                <td>23</td>
-                            </tr>
+                            @foreach ($grade as $Grade)
+                                <tr>
+
+                                    <td>{{ $Grade->id }}</td>
+                                    <td>{{ $Grade->name }}</td>
+                                    <td>{{ $Grade->notes }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                            data-target="#edit{{ $Grade->id }}"
+                                            title="{{ trans('school_grades_trans.Edit') }}"><i class="fa fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                                            data-target="#delete{{ $Grade->id }}"
+                                            title="{{ trans('school_grades_trans.Delete') }}"><i
+                                                class="fa fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                                @endforeach
                         </tbody>
 
                     </table>
@@ -187,8 +75,58 @@
             </div>
         </div>
     </div>
+    <!-- add_modal_Grade -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title" id="exampleModalLabel">
+                {{ trans('school_grades_trans.add_Grade') }}
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- add_form -->
+            <form action="{{ route('school_garde.store') }}" method="POST">
+                @csrf
+                <div class="row">
+                    <div class="col">
+                        <label for="Name" class="mr-sm-2">{{ trans('school_grades_trans.stage_name_ar') }}
+                            :</label>
+                        <input id="Name" type="text" name="Name" class="form-control">
+                    </div>
+                    <div class="col">
+                        <label for="Name_en" class="mr-sm-2">{{ trans('school_grades_trans.stage_name_en') }}
+                            :</label>
+                        <input type="text" class="form-control" name="Name_en">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">{{ trans('school_grades_trans.Notes') }}
+                        :</label>
+                    <textarea class="form-control" name="Notes" id="exampleFormControlTextarea1"
+                        rows="3"></textarea>
+                </div>
+                <br><br>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">{{ trans('school_grades_trans.Close') }}</button>
+            <button type="submit" class="btn btn-success">{{ trans('school_grades_trans.submit') }}</button>
+        </div>
+        </form>
+
+    </div>
+</div>
+</div>
+
+</div>
 </div>
 @endsection
 @section('js')
-
+@toastr_js
+@toastr_render
 @endsection

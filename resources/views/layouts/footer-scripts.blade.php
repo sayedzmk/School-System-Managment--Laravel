@@ -28,11 +28,11 @@
 <script src="{{ URL::asset('assets/js/custom.js') }}"></script>
 
 
-<script>
+{{-- <script>
     $(document).ready(function() {
         $('#datatable').DataTable();
     } );
-</script>
+</script> --}}
 
 
 
@@ -46,7 +46,7 @@
 
 
 
-<script>
+{{-- <script>
     function CheckAll(className, elem) {
         var elements = document.getElementsByClassName(className);
         var l = elements.length;
@@ -60,4 +60,4 @@
             }
         }
     }
-</script>
+</script> --}}
