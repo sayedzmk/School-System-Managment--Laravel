@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SchoolGrades\SchoolGradeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,17 +13,38 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
+
+Route::group( ['middleware'=>['guest']],function () {
+    Route::get('/', function()
+    {
+        return view('auth.login');
+    });
+});
+
+
 
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-    ], function(){
-        Route::get('/', function()
-        {
-            return view('dashboard');
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
+    ],
+    function(){
+        // Route::get('/', function()
+        // {
+        //     return view('dashboard');
+        // });
+        Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+        Route::group(['namespace'=>'SchoolGrades'],function () {
+            Route::resource('/school_garde', 'SchoolGradeController');
         });
-    });
+
+    }
+);
+
+
+
 
 
 
