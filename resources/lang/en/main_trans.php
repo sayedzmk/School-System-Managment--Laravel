@@ -4,7 +4,25 @@ return [
 
     'Dashboard'=>'Dashboard',
     'Dashboard_page'=>'Dashboard',
-    'change_language'=>'Language',
+    'Main_title' => 'School Management Program',
+    'Programname' => 'School Management Program',
+    'change_language'=>'language',
     'School Grades'=>'School Grades',
-    'list_School_Grades'=>'List School Grades',
+    'Grades_list'=>'Grades List',
+    'classes'=>'Classes',
+    'sections'=>'Sections',
+    'students'=>'Students',
+    'Teachers'=>'Teachers',
+    'Parents'=>'Parents',
+    'Accounts'=>'Accounts',
+    'Attendance'=>'Attendance',
+    'Exams'=>'Exams',
+    'library'=>'Library',
+    'Onlineclasses'=>'Online classes',
+    'Settings'=>'Settings',
+    'Users'=>'Users',
+
+
+    'Copyright' => 'Copyright',
+    'Name_Programer' => 'Sayed Mohamed All Rights Reserved'
 ];

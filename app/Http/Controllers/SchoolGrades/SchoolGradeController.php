@@ -91,9 +91,23 @@ class SchoolGradeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateSchoolGrade $request)
     {
-        //
+        try {
+            $validated = $request->validated();
+            $Grade = SchoolGrade::findOrfail($request->id);
+
+            $Grade->update([
+                $Grade->name = ['en' => $request->Name_en, 'ar' => $request->Name],
+                $Grade->notes = $request->Notes
+            ]);
+            toastr()->success(trans('message.Update'));
+            return redirect()->route('school_garde.index');
+        }
+
+        catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -102,8 +116,10 @@ class SchoolGradeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        $Grade = SchoolGrade::findOrfail($request->id)->delete();
+        toastr()->error(trans('message.Delete'));
+        return redirect()->route('school_garde.index');
     }
 }
