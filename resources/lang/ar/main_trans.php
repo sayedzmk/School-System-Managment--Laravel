@@ -9,7 +9,7 @@ return [
     'change_language'=>'تغير اللغة',
     'School Grades'=>'المراحل الدراسية',
     'Grades_list'=>'قائمة المراحل الدراسية',
-    'classes'=>'الفصول',
+    'classes'=>'الصفوف',
     'sections'=>'الاقسام',
     'students'=>'الطلاب',
     'Teachers'=>'المعلمين',

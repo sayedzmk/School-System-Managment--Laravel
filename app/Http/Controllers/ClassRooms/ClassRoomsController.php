@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\SchoolGrades;
+namespace App\Http\Controllers\ClassRooms;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SchoolGrade;
-use App\Http\Requests\CreateSchoolGrade;
+use App\Models\ClassRooms;
+use App\Http\Requests\CreateClassesRooms;
 
-class SchoolGradeController extends Controller
+class ClassRoomsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +16,10 @@ class SchoolGradeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-
     {
-        $schoolgrade=SchoolGrade::all();
-        return view('pages.schoolgrages.school_grade')->with('grade',$schoolgrade);
+        $My_Classes = ClassRooms::all();
+        $Grades = SchoolGrade::all();
+        return view('pages.ClassRooms.classrooms',compact('My_Classes', 'Grades'));
     }
 
     /**
@@ -37,27 +38,31 @@ class SchoolGradeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateSchoolGrade $request)
+    public function store(CreateClassesRooms $request)
     {
-        // if (SchoolGrade::where('Name->ar', $request->Name)->orWhere('Name->en',$request->Name_en)->exists()) {
 
-        //     return redirect()->back()->withErrors(trans('school_grades_trans.exists'));
-        // }
+        $List_Classes = $request->List_Classes;
+
         try {
             $validated = $request->validated();
-            $Grade = new SchoolGrade();
 
-            $Grade->name = ['en' => $request->Name_en, 'ar' => $request->Name];
-            $Grade->notes = $request->Notes;
-            $Grade->save();
+            foreach ($List_Classes as $List_Class) {
+
+                $My_Classes = new ClassRooms();
+
+                $My_Classes->name_class = ['en' => $List_Class['Name_class_en'], 'ar' => $List_Class['Name_ar']];
+
+                $My_Classes->schoolgarde_id = $List_Class['Grade_id'];
+
+                $My_Classes->save();
+
+            }
+
             toastr()->success(trans('message.successs'));
-            return redirect()->route('school_garde.index');
-        }
-
-        catch (\Exception $e){
+            return redirect()->route('class_rooms.index');
+        } catch (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
-
     }
 
     /**
@@ -89,23 +94,23 @@ class SchoolGradeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CreateSchoolGrade $request)
+    public function update(Request $request, $id)
     {
-
-
         try {
-            $validated = $request->validated();
-            $Grade = SchoolGrade::findOrfail($request->id);
 
-            $Grade->update([
-                $Grade->name = ['en' => $request->Name_en, 'ar' => $request->Name],
-                $Grade->notes = $request->Notes
+            $Classrooms = ClassRooms::findOrFail($request->id);
+
+            $Classrooms->update([
+
+                $Classrooms->name_class = ['ar' => $request->Name, 'en' => $request->Name_en],
+                $Classrooms->schoolgarde_id = $request->Grade_id,
             ]);
             toastr()->success(trans('message.Update'));
-            return redirect()->route('school_garde.index');
+            return redirect()->route('class_rooms.index');
         }
 
-        catch (\Exception $e){
+        catch
+        (\Exception $e) {
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
@@ -116,10 +121,11 @@ class SchoolGradeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request)
+    public function destroy($id)
     {
-        $Grade = SchoolGrade::findOrfail($request->id)->delete();
-        toastr()->error(trans('message.Delete'));
-        return redirect()->route('school_garde.index');
+
+        $Classrooms = ClassRooms::findOrFail($request->id)->delete();
+        toastr()->error(trans('messages.Delete'));
+        return redirect()->route('class_rooms.index');
     }
 }

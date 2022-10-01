@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SchoolGrades\SchoolGradeController;
+use App\Http\Controllers\ClassRooms\ClassRoomsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,9 @@ Route::group(
 
         Route::group(['namespace'=>'SchoolGrades'],function () {
             Route::resource('/school_garde', 'SchoolGradeController');
+        });
+        Route::group(['namespace'=>'ClassRooms'],function () {
+            Route::resource('/class_rooms', 'ClassRoomsController');
         });
 
     }
