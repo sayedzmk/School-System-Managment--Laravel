@@ -128,4 +128,24 @@ class ClassRoomsController extends Controller
         toastr()->error(trans('messages.Delete'));
         return redirect()->route('class_rooms.index');
     }
+
+
+    public function delete_all(Request $request)
+    {
+        $delete_all_id = explode(",", $request->delete_all_id);
+
+        ClassRooms::whereIn('id', $delete_all_id)->Delete();
+        toastr()->error(trans('message.Delete'));
+        return redirect()->route('class_rooms.index');
+    }
+
+
+    public function Filter_Classes(Request $request)
+    {
+        $Grades = SchoolGrade::all();
+        $Search = ClassRooms::select('*')->where('schoolgarde_id','=',$request->Grade_id)->get();
+        return view('pages.ClassRooms.classrooms',compact('Grades'))->withDetails($Search);
+
+    }
+
 }

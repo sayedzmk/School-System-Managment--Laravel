@@ -41,7 +41,9 @@ Route::group(
             Route::resource('/school_garde', 'SchoolGradeController');
         });
         Route::group(['namespace'=>'ClassRooms'],function () {
-            Route::resource('/class_rooms', 'ClassRoomsController');
+            Route::resource('/class_rooms','ClassRoomsController');
+            Route::post('delete_all',  'ClassRoomsController@delete_all')->name('delete_all');
+            Route::post('Filter_Classes',  'ClassRoomsController@Filter_Classes')->name('Filter_Classes');
         });
 
     }

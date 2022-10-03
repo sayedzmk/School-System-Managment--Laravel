@@ -5,6 +5,7 @@ namespace App\Http\Controllers\SchoolGrades;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\SchoolGrade;
+use App\Models\ClassRooms;
 use App\Http\Requests\CreateSchoolGrade;
 
 class SchoolGradeController extends Controller
@@ -118,8 +119,19 @@ class SchoolGradeController extends Controller
      */
     public function destroy(Request $request)
     {
+        $MyClass_id = ClassRooms::where('schoolgarde_id',$request->id)->pluck('schoolgarde_id');
+
+        if($MyClass_id->count() == 0){
+
         $Grade = SchoolGrade::findOrfail($request->id)->delete();
         toastr()->error(trans('message.Delete'));
         return redirect()->route('school_garde.index');
+        }
+        else{
+
+            toastr()->error(trans('school_grades_trans.delete_Grade_Error'));
+            return redirect()->route('school_garde.index');
+
+        }
     }
 }

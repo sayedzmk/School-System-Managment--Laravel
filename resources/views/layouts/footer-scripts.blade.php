@@ -43,7 +43,26 @@
     <script src="{{ URL::asset('assets/js/bootstrap-datatables/ar/jquery.dataTables.min.js') }}"></script>
     <script src="{{ URL::asset('assets/js/bootstrap-datatables/ar/dataTables.bootstrap4.min.js') }}"></script>
 @endif
+<script>
+    function CheckAll(className,elem){
+        let elements=document.getElementsByClassName(className);
+        let l= elements.length;
 
+        if(elem.checked){
+            for(let i=0; i<l ;i++){
+                elements[i].checked=true;
+
+            }
+        }else{
+            for(let i=0; i<l ;i++){
+                elements[i].checked=false;
+
+            }
+        }
+
+    }
+
+</script>
 
 
 

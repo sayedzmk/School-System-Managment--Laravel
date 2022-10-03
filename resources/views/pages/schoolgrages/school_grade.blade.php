@@ -39,6 +39,8 @@
                 <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
                     {{ trans('school_grades_trans.add_Grade') }}
                 </button>
+
+
                 <br><br>
                 <div class="table-responsive">
                     <table id="datatable" class="table table-striped table-bordered p-0">
@@ -121,7 +123,7 @@
                                                         <button type="button" class="btn btn-secondary"
                                                             data-dismiss="modal">{{ trans('school_grades_trans.Close') }}</button>
                                                         <button type="submit"
-                                                            class="btn btn-success">{{ trans('school_grades_trans.submit') }}</button>
+                                                            class="btn btn-success">{{ trans('school_grades_trans.update') }}</button>
                                                     </div>
                                                 </form>
 
@@ -156,7 +158,7 @@
                                                         <button type="button" class="btn btn-secondary"
                                                             data-dismiss="modal">{{ trans('school_grades_trans.Close') }}</button>
                                                         <button type="submit"
-                                                            class="btn btn-danger">{{ trans('school_grades_trans.submit') }}</button>
+                                                            class="btn btn-danger">{{ trans('school_grades_trans.delete') }}</button>
                                                     </div>
                                                 </form>
                                             </div>
