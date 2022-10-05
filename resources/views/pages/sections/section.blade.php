@@ -111,7 +111,7 @@
 
 
                                                                     <!--تعديل قسم جديد -->
-                                                                    {{-- <div class="modal fade"
+                                                                    <div class="modal fade"
                                                                         id="edit{{ $list_Sections->id }}"
                                                                         tabindex="-1" role="dialog"
                                                                         aria-labelledby="exampleModalLabel"
@@ -135,7 +135,7 @@
                                                                                 <div class="modal-body">
 
                                                                                     <form
-                                                                                        action="{{ route('Sections.update', 'test') }}"
+                                                                                        action="{{ route('section.update', 'test') }}"
                                                                                         method="POST">
                                                                                         {{ method_field('patch') }}
                                                                                         {{ csrf_field() }}
@@ -144,14 +144,14 @@
                                                                                                 <input type="text"
                                                                                                     name="Name_Section_Ar"
                                                                                                     class="form-control"
-                                                                                                    value="{{ $list_Sections->getTranslation('Name_Section', 'ar') }}">
+                                                                                                    value="{{ $list_Sections->getTranslation('name_section', 'ar') }}">
                                                                                             </div>
 
                                                                                             <div class="col">
                                                                                                 <input type="text"
                                                                                                     name="Name_Section_En"
                                                                                                     class="form-control"
-                                                                                                    value="{{ $list_Sections->getTranslation('Name_Section', 'en') }}">
+                                                                                                    value="{{ $list_Sections->getTranslation('name_section', 'en') }}">
                                                                                                 <input id="id"
                                                                                                     type="hidden"
                                                                                                     name="id"
@@ -172,12 +172,12 @@
                                                                                                 <!--placeholder-->
                                                                                                 <option
                                                                                                     value="{{ $Grade->id }}">
-                                                                                                    {{ $Grade->Name }}
+                                                                                                    {{ $Grade->name }}
                                                                                                 </option>
                                                                                                 @foreach ($list_Grades as $list_Grade)
                                                                                                     <option
                                                                                                         value="{{ $list_Grade->id }}">
-                                                                                                        {{ $list_Grade->Name }}
+                                                                                                        {{ $list_Grade->name }}
                                                                                                     </option>
                                                                                                 @endforeach
                                                                                             </select>
@@ -190,8 +190,8 @@
                                                                                             <select name="Class_id"
                                                                                                 class="custom-select">
                                                                                                 <option
-                                                                                                    value="{{ $list_Sections->My_classs->id }}">
-                                                                                                    {{ $list_Sections->My_classs->Name_Class }}
+                                                                                                    value="{{ $list_Sections->classes->id }}">
+                                                                                                    {{ $list_Sections->classes->name_class }}
                                                                                                 </option>
                                                                                             </select>
                                                                                         </div>
@@ -232,11 +232,11 @@
                                                                                 </form>
                                                                             </div>
                                                                         </div>
-                                                                    </div> --}}
+                                                                    </div>
 
 
                                                                     <!-- delete_modal_Grade -->
-                                                                    {{-- <div class="modal fade"
+                                                                    <div class="modal fade"
                                                                         id="delete{{ $list_Sections->id }}"
                                                                         tabindex="-1" role="dialog"
                                                                         aria-labelledby="exampleModalLabel"
@@ -259,7 +259,7 @@
                                                                                 </div>
                                                                                 <div class="modal-body">
                                                                                     <form
-                                                                                        action="{{ route('Sections.destroy', 'test') }}"
+                                                                                        action="{{ route('section.destroy', 'test') }}"
                                                                                         method="post">
                                                                                         {{ method_field('Delete') }}
                                                                                         @csrf
@@ -280,7 +280,7 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div> --}}
+                                                                    </div>
                                                                 @endforeach
                                                             </tbody>
                                                         </table>

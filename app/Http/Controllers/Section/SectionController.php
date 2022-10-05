@@ -90,9 +90,32 @@ class SectionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateSections $request)
     {
-        //
+        try {
+            $validated = $request->validated();
+            $section = Section::findOrfail($request->id);
+
+            $section->name_section = ['en' => $request->Name_Section_En, 'ar' => $request->Name_Section_Ar];
+
+            $section->schoolgarde_id = $request->Grade_id;
+            $section->class_id= $request->Class_id;
+            if(isset($request->Status)) {
+                $section->Status = 1;
+                } else {
+                $section->Status = 2;
+                }
+
+
+            $section->update();
+
+            toastr()->success(trans('message.Update'));
+            return redirect()->route('section.index');
+        }
+
+        catch (\Exception $e){
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
 
     /**
@@ -103,7 +126,9 @@ class SectionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Section::findOrFail($request->id)->delete();
+        toastr()->error(trans('message.Delete'));
+        return redirect()->route('section.index');
     }
 
 
