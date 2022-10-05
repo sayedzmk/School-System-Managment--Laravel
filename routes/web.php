@@ -45,6 +45,10 @@ Route::group(
             Route::post('delete_all',  'ClassRoomsController@delete_all')->name('delete_all');
             Route::post('Filter_Classes',  'ClassRoomsController@Filter_Classes')->name('Filter_Classes');
         });
+        Route::group(['namespace'=>'Section'],function () {
+            Route::resource('/section', 'SectionController');
+            Route::get('/classes/{id}', 'SectionController@getclasses');
+        });
 
     }
 );

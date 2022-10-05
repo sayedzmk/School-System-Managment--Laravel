@@ -11,4 +11,10 @@ class SchoolGrade extends Model
 
     protected $table = 'school_gardes';
     protected $fillable=['name','notes'];
+
+
+    public function Sections()
+    {
+        return $this->hasMany('App\Models\Section', 'schoolgarde_id');
+    }
 }
