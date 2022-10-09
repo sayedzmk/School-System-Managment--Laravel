@@ -36,20 +36,23 @@ Route::group(
         //     return view('dashboard');
         // });
         Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-
+            ###################SchoolGrades###############
         Route::group(['namespace'=>'SchoolGrades'],function () {
             Route::resource('/school_garde', 'SchoolGradeController');
         });
+        ###################ClassRooms###############
         Route::group(['namespace'=>'ClassRooms'],function () {
             Route::resource('/class_rooms','ClassRoomsController');
             Route::post('delete_all',  'ClassRoomsController@delete_all')->name('delete_all');
             Route::post('Filter_Classes',  'ClassRoomsController@Filter_Classes')->name('Filter_Classes');
         });
+        ###################Section###############
         Route::group(['namespace'=>'Section'],function () {
             Route::resource('/section', 'SectionController');
             Route::get('/classes/{id}', 'SectionController@getclasses');
         });
-
+        ###################Parent###############
+        Route::view('/add-parent', 'livewire.form-addParent');
     }
 );
 
