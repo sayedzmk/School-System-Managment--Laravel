@@ -31,10 +31,6 @@ Route::group(
         'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
     ],
     function(){
-        // Route::get('/', function()
-        // {
-        //     return view('dashboard');
-        // });
         Route::get('/dashboard', 'HomeController@index')->name('dashboard');
             ###################SchoolGrades###############
         Route::group(['namespace'=>'SchoolGrades'],function () {
