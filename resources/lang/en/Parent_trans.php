@@ -19,7 +19,11 @@ return [
     'Religion_Father_id' => 'Religion',
     'Address_Father' => 'Address Father',
 
-    'Next' => 'Next',
-    'Choose' => 'Choose',
 
+    'Next' => 'Next',
+    'Back' => 'Back',
+    'Finish' => 'Finish',
+    'Choose' => 'Choose',
+    'Attachments' => 'Attachments',
+    'Processes' => 'Processes',
 ];

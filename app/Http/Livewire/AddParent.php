@@ -7,14 +7,16 @@ use App\Models\Nationality;
 use App\Models\TypeBlood;
 use App\Models\Religion;
 use App\Models\MyParent;
-
+use App\Models\ParentAttachment;
+use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Hash;
 class AddParent extends Component
 {
+    use WithFileUploads;
 
     public $successMessage = '';
 
-    public $catchError;
+    public $catchError,$updateMode = false,$photos;
 
     public $currentStep = 1,
 
@@ -61,6 +63,7 @@ class AddParent extends Component
     //firstStepSubmit
     public function firstStepSubmit()
     {
+
         $this->validate([
             'Email' => 'required|unique:my_parents,Email,'.$this->id,
             'Password' => 'required',
@@ -130,9 +133,18 @@ class AddParent extends Component
             $My_Parent->Blood_Type_Mother_id = $this->Blood_Type_Mother_id;
             $My_Parent->Religion_Mother_id = $this->Religion_Mother_id;
             $My_Parent->Address_Mother = $this->Address_Mother;
-
             $My_Parent->save();
-            $this->successMessage = trans('message.success');
+
+            if (!empty($this->photos)){
+                foreach ($this->photos as $photo) {
+                    $photo->storeAs($this->National_ID_Father, $photo->getClientOriginalName(), $disk = 'parent_attachments');
+                    ParentAttachment::create([
+                        'file_name' => $photo->getClientOriginalName(),
+                        'parent_id' => MyParent::latest()->first()->id,
+                    ]);
+                }
+            }
+            $this->successMessage = trans('message.successs');
             $this->clearForm();
             $this->currentStep = 1;
         }
@@ -140,6 +152,8 @@ class AddParent extends Component
         catch (\Exception $e) {
             $this->catchError = $e->getMessage();
         };
+
+
 
 
 
