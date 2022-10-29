@@ -15,7 +15,7 @@ class CreateParentAttachmentsTable extends Migration
     {
         Schema::create('parent_attachments', function (Blueprint $table) {
             $table->id();
-            $table->string('file_name');
+            $table->string('file_name')->nullable();
             $table->unsignedBigInteger('parent_id');
             $table->foreign('parent_id')->references('id')->on('my_parents') ->onUpdate('cascade')
             ->onDelete('cascade');
