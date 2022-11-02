@@ -18,6 +18,7 @@ return [
     'delete' => 'حذف البيانات',
     'Name_Section'=>'اسم القسم',
     'Name_Class'=>'اسم الصف',
+    'Name_Teacher'=>'اسم المعلم',
     'Status'=>'الحالة',
     'Status_Section_AC'=>'نشط',
     'Status_Section_No'=>'غير نشط',
