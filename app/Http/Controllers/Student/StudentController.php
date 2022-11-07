@@ -16,7 +16,7 @@ class StudentController extends Controller
     }
     public function index()
     {
-        //
+        return $this->Student->Get_student();
     }
 
     /**
@@ -59,7 +59,7 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        return $this->Student->Edit_student($id);
     }
 
     /**
@@ -69,9 +69,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CreateStudentRequest $request)
     {
-        //
+        return $this->Student->update_student($request);
     }
 
     /**
@@ -80,9 +80,9 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        //
+        return $this->Student->Delete_Student($request);
     }
 
     public function Get_classrooms($id)

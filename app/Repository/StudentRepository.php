@@ -14,6 +14,13 @@ use App\Models\Section;
 use App\Models\ClassRooms;
 class StudentRepository implements StudentRepositoryInterface
 {
+    public function Get_student()
+    {
+        $students=Student::all();
+        return view('pages.Student.index_student',compact('students'));
+    }
+
+
 
     public function create_student(){
         $data['school_grade']=SchoolGrade::all();
@@ -23,6 +30,41 @@ class StudentRepository implements StudentRepositoryInterface
         $data['nationality']=Nationality::all();
         $data['gender']=Gender::all();
         return view('pages.Student.Add_Student',$data);
+    }
+    public function Edit_student($id)
+    {
+        $data['school_grade']=SchoolGrade::all();
+        $data['parents']=MyParent::all();
+        $data['bloods']=TypeBlood::all();
+        $data['religion']=Religion::all();
+        $data['nationality']=Nationality::all();
+        $data['gender']=Gender::all();
+        $Students =  Student::findOrFail($id);
+        return view('pages.Student.edit_student',$data,compact('Students'));
+    }
+
+    public function update_student($request)
+    {
+        try {
+            $Edit_Students = Student::findorfail($request->id);
+            $Edit_Students->name = ['ar' => $request->name_ar, 'en' => $request->name_en];
+            $Edit_Students->email = $request->email;
+            $Edit_Students->password = Hash::make($request->password);
+            $Edit_Students->gender_id = $request->gender_id;
+            $Edit_Students->nationalitie_id = $request->nationalitie_id;
+            $Edit_Students->blood_id = $request->blood_id;
+            $Edit_Students->Date_Birth = $request->Date_Birth;
+            $Edit_Students->schoolGardes_id = $request->Grade_id;
+            $Edit_Students->Classroom_id = $request->Classroom_id;
+            $Edit_Students->section_id = $request->section_id;
+            $Edit_Students->parent_id = $request->parent_id;
+            $Edit_Students->academic_year = $request->academic_year;
+            $Edit_Students->save();
+            toastr()->success(trans('message.Update'));
+            return redirect()->route('student.index');
+        } catch (\Exception $e) {
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
+        }
     }
     public function Get_classrooms($id){
 
@@ -56,12 +98,20 @@ class StudentRepository implements StudentRepositoryInterface
             $students->academic_year = $request->academic_year;
             $students->save();
             toastr()->success(trans('message.successs'));
-            return redirect()->route('student.create');
+            return redirect()->route('student.index');
         }
 
         catch (\Exception $e){
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
 
+    }
+
+    public function Delete_Student($request)
+    {
+
+        Student::destroy($request->id);
+        toastr()->error(trans('message.Delete'));
+        return redirect()->route('student.index');
     }
 }
