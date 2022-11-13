@@ -48,7 +48,7 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        return $this->Student->Show_student($id);
     }
 
     /**
@@ -93,5 +93,17 @@ class StudentController extends Controller
     public function Get_Sections($id)
     {
         return $this->Student->Get_Sections($id);
+    }
+
+    public function Uploade_Attachment(Request $request)
+    {
+        return $this->Student->Uploade_Attachment($request);
+    }
+
+    public function Download_Attachment($studentsname,$filename){
+        return $this->Student->Download_Attachment($studentsname,$filename);
+    }
+    public function Delete_attachment(Request $request){
+        return $this->Student->Delete_attachment($request);
     }
 }

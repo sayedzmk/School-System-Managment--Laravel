@@ -12,6 +12,7 @@ interface StudentRepositoryInterface
     public function update_student($request);
 
     public function create_student();
+    public function Show_Student($id);
 
     public function Delete_Student($request);
     // Get classrooms
@@ -22,4 +23,13 @@ interface StudentRepositoryInterface
 
     //Store_Student
     public function Store_Student($request);
+
+    //Upload Attachment
+    public function Uploade_Attachment($request);
+
+    //Download Attachment
+    public function Download_Attachment($studentsname,$filename);
+
+    //Delete Attachment
+    public function Delete_attachment($request);
 }

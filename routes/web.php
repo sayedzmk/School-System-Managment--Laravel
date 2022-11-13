@@ -1,9 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SchoolGrades\SchoolGradeController;
-use App\Http\Controllers\ClassRooms\ClassRoomsController;
-
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,58 +12,51 @@ use App\Http\Controllers\ClassRooms\ClassRoomsController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 Auth::routes();
 
-Route::group( ['middleware'=>['guest']],function () {
-    Route::get('/', function()
-    {
+Route::group(['middleware' => ['guest']], function () {
+    Route::get('/', function () {
         return view('auth.login');
     });
 });
 
-
-
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ,'auth']
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth'],
     ],
-    function(){
+    function () {
         Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-            ###################SchoolGrades###############
-        Route::group(['namespace'=>'SchoolGrades'],function () {
+        ###################SchoolGrades###############
+        Route::group(['namespace' => 'SchoolGrades'], function () {
             Route::resource('/school_garde', 'SchoolGradeController');
         });
         ###################ClassRooms###############
-        Route::group(['namespace'=>'ClassRooms'],function () {
-            Route::resource('/class_rooms','ClassRoomsController');
-            Route::post('delete_all',  'ClassRoomsController@delete_all')->name('delete_all');
-            Route::post('Filter_Classes',  'ClassRoomsController@Filter_Classes')->name('Filter_Classes');
+        Route::group(['namespace' => 'ClassRooms'], function () {
+            Route::resource('/class_rooms', 'ClassRoomsController');
+            Route::post('delete_all', 'ClassRoomsController@delete_all')->name('delete_all');
+            Route::post('Filter_Classes', 'ClassRoomsController@Filter_Classes')->name('Filter_Classes');
         });
         ###################Section###############
-        Route::group(['namespace'=>'Section'],function () {
+        Route::group(['namespace' => 'Section'], function () {
             Route::resource('/section', 'SectionController');
             Route::get('/classes/{id}', 'SectionController@getclasses');
         });
         ###################Parent###############
         Route::view('/add-parent', 'livewire.form-addParent');
         ##################Teacher###############
-        Route::group(['namespace'=>'Teacher'],function () {
+        Route::group(['namespace' => 'Teacher'], function () {
             Route::resource('/teacher', 'TeacherController');
         });
         ##################Students###############
-        Route::group(['namespace'=>'Student'],function () {
+        Route::group(['namespace' => 'Student'], function () {
             Route::resource('/student', 'StudentController');
             Route::get('/Get_classrooms/{id}', 'StudentController@Get_classrooms');
             Route::get('/Get_Sections/{id}', 'StudentController@Get_Sections');
+            Route::post('Upload_attachment', 'StudentController@Uploade_Attachment')->name('Upload_attachment');
+            Route::get('Download_attachment/{studentsname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
+            Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
         });
     }
 );
-
-
-
-
-
-
-

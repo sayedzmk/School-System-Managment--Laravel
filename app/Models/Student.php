@@ -37,4 +37,21 @@ class Student extends Model
     {
         return $this->belongsTo('App\Models\Section', 'section_id');
     }
+
+    public function Nationality()
+    {
+        return $this->belongsTo('App\Models\Nationality', 'nationalitie_id');
+    }
+    // علاقة بين الطلاب والاباء لجلب اسم الاب في جدول الاباء
+
+    public function myparent()
+    {
+        return $this->belongsTo('App\Models\MyParent', 'parent_id');
+    }
+
+    // علاقة بين الطلاب والصور لجلب اسم الصور  في جدول الطلاب
+    public function images()
+    {
+        return $this->morphMany('App\Models\Image', 'imageable');
+    }
 }
