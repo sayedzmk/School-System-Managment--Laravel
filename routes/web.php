@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Student\StudentPromotionController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 /*
 |--------------------------------------------------------------------------
@@ -57,6 +58,11 @@ Route::group(
             Route::post('Upload_attachment', 'StudentController@Uploade_Attachment')->name('Upload_attachment');
             Route::get('Download_attachment/{studentsname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
             Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
+        });
+
+        //==============================Promotion Students ============================
+        Route::group(['namespace' => 'Student'], function () {
+            Route::resource('promotion', 'StudentPromotionController');
         });
     }
 );
