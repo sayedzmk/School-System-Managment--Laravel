@@ -15,7 +15,8 @@ return [
     'Everyone retreated'=>'تراجع الكل',
     'Are you familiar with the process of reviewing all students?' => 'هل انت متاكد من عملية تراجع كافة الطلاب ؟',
     'Are you familiar with the process of reviewing  student?' => 'هل انت متاكد من عملية تراجع الطالب ؟',
-    'restoration_student'=>'ارجاع الطلاب'
+    'restoration_student'=>'ارجاع الطلاب',
+    'Delete the student'=>'حذف الطالب'
 
 
 

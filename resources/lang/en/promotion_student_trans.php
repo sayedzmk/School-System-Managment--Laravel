@@ -16,5 +16,7 @@ return [
     'Are you familiar with the process of reviewing all students?' => 'Are you familiar with the process of reviewing all students?',
     'restoration_student'=>'ٌRestoration Student',
     'Are you familiar with the process of reviewing  student?' => 'Are you familiar with the process of reviewing  student?',
+    'Delete the student'=>'Delete the student'
+
 
 ];

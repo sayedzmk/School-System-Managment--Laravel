@@ -32,4 +32,8 @@ return [
     'created_at' => 'created_at',
     'Download' => 'Download',
     'delete' => 'Delete',
+    'There is no data in the students table' => 'There is no data in the students table',
+    'Are you sure to cancel the graduation process?'=>'Are you sure to cancel the graduation process?',
+
+
 ];

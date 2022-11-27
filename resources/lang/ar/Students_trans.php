@@ -31,4 +31,7 @@ return [
     'created_at' => 'تاريخ الاضافة',
     'Download' => 'تحميل',
     'delete' => 'حذف',
+    'There is no data in the students table'=>'لاتوجد بيانات في جدول الطلاب',
+    'Are you sure to cancel the graduation process?'=>'هل انت متاكد من الغاء عملية التخرج ؟',
+
 ];
