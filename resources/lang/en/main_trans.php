@@ -20,6 +20,7 @@ return [
     'Graduate_students'=>'Graduate Students',
     'add_Graduate'=>'Add Graduate',
     'list_Graduate'=>'List Graduate',
+    'study fees'=>'Study Fees',
     'Teachers'=>'Teachers',
     'List_Teachers' => 'List Teachers',
     'Parents'=>'Parents',

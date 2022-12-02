@@ -5,8 +5,8 @@ return [
 
     'personal_information' => 'personal information',
     'name' => 'Name',
-    'name_ar' => 'name_ar',
-    'name_en' => 'name_en',
+    'name_ar' => 'Name AR',
+    'name_en' => 'Name EN',
     'email' => 'email',
     'password' => 'password',
     'gender' => 'gender',
