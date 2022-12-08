@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Gender;
+use Illuminate\Support\Facades\DB;
 
 class GenderSeeder extends Seeder
 {

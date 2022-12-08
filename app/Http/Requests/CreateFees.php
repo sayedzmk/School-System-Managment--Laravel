@@ -28,7 +28,7 @@ class CreateFees extends FormRequest
             'title_en' => 'required',
             'amount' => 'required|numeric',
             // 'shchoolgrade_id' => 'required',
-            'Classroom_id' => 'required|integer|unique:fees,Classroom_id,'.$this->id,
+            'Classroom_id' => 'required|integer',
             'year' => 'required',
         ];
     }

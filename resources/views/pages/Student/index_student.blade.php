@@ -48,16 +48,17 @@
                                                 <td>{{ $student->classroom->name_class }}</td>
                                                 <td>{{ $student->section->name_section }}</td>
                                                 <td>
-                                                    <a href="{{ route('student.edit', $student->id) }}"
-                                                        class="btn btn-info btn-sm" role="button"
-                                                        aria-pressed="true"><i class="fa fa-edit"></i></a>
-                                                    <button type="button" class="btn btn-danger btn-sm"
-                                                        data-toggle="modal"
-                                                        data-target="#Delete_Student{{ $student->id }}"
-                                                        title="{{ trans('Grades_trans.Delete') }}"><i
-                                                            class="fa fa-trash"></i></button>
-                                                    <a href="{{ route('student.show', $student->id) }}" class="btn btn-warning btn-sm" role="button"
-                                                        aria-pressed="true"><i class="far fa-eye"></i></a>
+                                                        <div class="dropdown show">
+                                                            <a class="btn btn-success btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                {{ trans('Students_trans.Processes') }}
+                                                            </a>
+                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                                <a class="dropdown-item" href="{{route('student.show',$student->id)}}"><i style="color: #ffc107" class="far fa-eye "></i>&nbsp; {{ trans('Students_trans.View_student_data') }}</a>
+                                                                <a class="dropdown-item" href="{{route('student.edit',$student->id)}}"><i style="color:green" class="fa fa-edit"></i>&nbsp; {{ trans('Students_trans.Student_Edit') }}</a>
+                                                                <a class="dropdown-item" href="{{route('fees_invoice.show',$student->id)}}"><i style="color: #0000cc" class="fa fa-plus"></i>&nbsp;  {{ trans('Students_trans.Add_fee_invoice') }}&nbsp;</a>
+                                                                <a class="dropdown-item" data-target="#Delete_Student{{ $student->id }}" data-toggle="modal" href="##Delete_Student{{ $student->id }}"><i style="color: red" class="fa fa-trash"></i>&nbsp;  {{ trans('Students_trans.Delete student data') }}  </a>
+                                                            </div>
+                                                        </div>
                                                 </td>
                                             </tr>
                                             @include('pages.Student.delete_student')

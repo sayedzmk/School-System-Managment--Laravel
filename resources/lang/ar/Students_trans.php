@@ -23,6 +23,9 @@ return [
     'Close' => 'اغلاق',
     'Attachments' => 'المرفقات',
     'Student_details' => 'معلومات الطالب',
+    'View_student_data' => ' عرض بيانات الطالب',
+    'Student_Edit' => 'تعديل بيانات الطالب',
+    'Add_fee_invoice' => 'اضافة فاتورة رسوم',
     'Deleted_Student' => 'حذف بيانات الطالب',
     'Deleted_Student_tilte' => 'هل انت متأكد من حذف الطالب ؟',
     'Delete_attachment' => 'حذف مرفق',
@@ -31,6 +34,7 @@ return [
     'created_at' => 'تاريخ الاضافة',
     'Download' => 'تحميل',
     'delete' => 'حذف',
+    'Delete student data' => 'حذف بيانات الطالب',
     'There is no data in the students table'=>'لاتوجد بيانات في جدول الطلاب',
     'Are you sure to cancel the graduation process?'=>'هل انت متاكد من الغاء عملية التخرج ؟',
 

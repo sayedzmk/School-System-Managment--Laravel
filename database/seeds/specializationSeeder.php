@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\Specialization;
+use Illuminate\Support\Facades\DB;
 
 class specializationSeeder extends Seeder
 {

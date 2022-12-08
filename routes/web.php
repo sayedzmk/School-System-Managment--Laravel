@@ -60,10 +60,11 @@ Route::group(
             Route::get('Download_attachment/{studentsname}/{filename}', 'StudentController@Download_attachment')->name('Download_attachment');
             Route::post('Delete_attachment', 'StudentController@Delete_attachment')->name('Delete_attachment');
         });
-        
+
         ##################Accounts###############
         Route::group(['namespace' => 'Accounts'], function () {
             Route::resource('/fees', 'AccountsController');
+            Route::resource('/fees_invoice', 'FeeInvoiceController');
         });
     }
 );

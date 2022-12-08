@@ -80,6 +80,14 @@
                                     @endfor
                                 </select>
                             </div>
+                            <div class="form-group col">
+                                <label for="inputZip"> {{ trans('fees_trans.Fee type') }}</label>
+                                <select class="custom-select mr-sm-2" name="Fee_type">
+                                    <option selected disabled>{{trans('Parent_trans.Choose')}}...</option>
+                                    <option value="1"> {{ trans('fees_trans.Tuition fees') }}</option>
+                                    <option value="2">{{ trans('fees_trans.Bus fees') }} </option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="form-group">

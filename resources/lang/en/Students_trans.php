@@ -24,6 +24,9 @@ return [
     'Close' => 'Close',
     'Attachments' => 'Attachments',
     'Student_details' => 'Student Details',
+    'View_student_data' => 'Student View Data',
+    'Student_Edit' => 'Student Edit',
+    'Add_fee_invoice' => 'Add a Fee Invoice',
     'Deleted_Student' => 'Delete student data',
     'Deleted_Student_tilte' => 'Are you sure to delete the student ?',
     'Delete_attachment' => 'Delete_attachment',
@@ -32,6 +35,7 @@ return [
     'created_at' => 'created_at',
     'Download' => 'Download',
     'delete' => 'Delete',
+    'Delete student data' => 'Delete Student Data',
     'There is no data in the students table' => 'There is no data in the students table',
     'Are you sure to cancel the graduation process?'=>'Are you sure to cancel the graduation process?',
 
