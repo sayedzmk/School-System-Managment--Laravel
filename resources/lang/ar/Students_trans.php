@@ -37,5 +37,8 @@ return [
     'Delete student data' => 'حذف بيانات الطالب',
     'There is no data in the students table'=>'لاتوجد بيانات في جدول الطلاب',
     'Are you sure to cancel the graduation process?'=>'هل انت متاكد من الغاء عملية التخرج ؟',
+    'receipt'=>'سندات القبض',
+    'receipt_edit'=>'تعديل سندات القبض',
+
 
 ];

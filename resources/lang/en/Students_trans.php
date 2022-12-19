@@ -38,6 +38,9 @@ return [
     'Delete student data' => 'Delete Student Data',
     'There is no data in the students table' => 'There is no data in the students table',
     'Are you sure to cancel the graduation process?'=>'Are you sure to cancel the graduation process?',
+    'receipt'=>'Receipt',
+    'receipt_edit'=>'Receipt Edit',
+
 
 
 ];
