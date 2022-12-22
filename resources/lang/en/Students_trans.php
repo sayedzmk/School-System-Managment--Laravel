@@ -28,6 +28,7 @@ return [
     'Student_Edit' => 'Student Edit',
     'Add_fee_invoice' => 'Add a Fee Invoice',
     'Deleted_Student' => 'Delete student data',
+    'fee_exclusion' => 'Fee Exclusion',
     'Deleted_Student_tilte' => 'Are you sure to delete the student ?',
     'Delete_attachment' => 'Delete_attachment',
     'Delete_attachment_tilte' => 'Are you sure to delete the attachment?',

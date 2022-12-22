@@ -13,6 +13,7 @@ return [
     'Bus fees'=>'Bus fees',
     'Statement'=>'Statement',
     'Tuition bills'=>'Tuition bills',
+    'Student_credit'=>'Student Credit',
     'Tuition fee adjustment'=>'Tuition Fee Edit',
     'Delete an invoice'=>'Delete An Invoice',
 

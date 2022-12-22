@@ -29,7 +29,7 @@
                                         <thead>
                                         <tr class="alert-success">
                                             <th>#</th>
-                                            <th>{{ trans('fees_trans.Name ') }}</th>
+                                            <th>{{ trans('fees_trans.Name') }}</th>
                                             <th>{{ trans('fees_trans.the amount') }}</th>
                                             <th>{{ trans('fees_trans.Statement') }} </th>
                                             <th>{{ trans('Students_trans.Processes') }}</th>

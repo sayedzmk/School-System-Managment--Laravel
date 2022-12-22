@@ -13,6 +13,7 @@ return [
     'Bus fees'=>'رسوم باص',
     'Statement'=>'البيان',
     'Tuition bills'=>'الفواتير الدراسية',
+    'Student_credit'=>'رصيد الطالب',
     'Tuition fee adjustment'=>'تعديل رسوم دراسية',
     'Delete an invoice'=>'حذف فاتورة',
 
