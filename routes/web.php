@@ -56,6 +56,7 @@ Route::group(
             Route::resource('Graduated', 'StudentGraduatedController');
             Route::resource('receipt_student', 'ReceiptStudentController');
             Route::resource('ProcessingFee', 'ProcessingFeeStudentController');
+            Route::resource('payment', 'PymentStudentController');
             Route::get('/Get_classrooms/{id}', 'StudentController@Get_classrooms');
             Route::get('/Get_Sections/{id}', 'StudentController@Get_Sections');
             Route::post('Upload_attachment', 'StudentController@Uploade_Attachment')->name('Upload_attachment');

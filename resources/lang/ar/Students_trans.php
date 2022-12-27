@@ -27,6 +27,7 @@ return [
     'Student_Edit' => 'تعديل بيانات الطالب',
     'Add_fee_invoice' => 'اضافة فاتورة رسوم',
     'fee_exclusion' => 'استبعاد رسوم',
+    'Exchange bond' => 'سندت صرف',
     'Deleted_Student' => 'حذف بيانات الطالب',
     'Deleted_Student_tilte' => 'هل انت متأكد من حذف الطالب ؟',
     'Delete_attachment' => 'حذف مرفق',

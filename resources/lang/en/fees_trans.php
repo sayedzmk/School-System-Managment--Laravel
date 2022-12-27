@@ -10,6 +10,8 @@ return [
     'Are you sure about the deletion process?'=>'Are you sure about the deletion process?',
     'Fee type'=>'Fee type',
     'Tuition fees'=>'Tuition fees',
+    'Tuition fee'=>'Tuition fees',
+    'Modify processing fee'=>'Modify Processing Fee',
     'Bus fees'=>'Bus fees',
     'Statement'=>'Statement',
     'Tuition bills'=>'Tuition bills',

@@ -162,6 +162,9 @@
                             <li> <a href="{{ route('fees.index') }}">{{ trans('main_trans.study fees') }}</a> </li>
                             <li> <a href="{{ route('fees_invoice.index') }}">{{ trans('fees_trans.Invoices') }}</a> </li>
                             <li> <a href="{{route('receipt_student.index')}}"> {{ trans('Students_trans.receipt') }}</a> </li>
+                            <li> <a href="{{route('ProcessingFee.index')}}"> {{ trans('Students_trans.fee_exclusion') }}</a> </li>
+                            <li> <a href="{{route('ProcessingFee.index')}}"> {{ trans('Students_trans.fee_exclusion') }}</a> </li>
+                            <li> <a href="{{route('payment.index')}}"> {{ trans('Students_trans.Exchange bond') }}</a> </li>
 
                         </ul>
                     </li>

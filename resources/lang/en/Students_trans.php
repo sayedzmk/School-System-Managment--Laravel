@@ -29,6 +29,7 @@ return [
     'Add_fee_invoice' => 'Add a Fee Invoice',
     'Deleted_Student' => 'Delete student data',
     'fee_exclusion' => 'Fee Exclusion',
+    'Exchange bond' => 'Exchange Bond',
     'Deleted_Student_tilte' => 'Are you sure to delete the student ?',
     'Delete_attachment' => 'Delete_attachment',
     'Delete_attachment_tilte' => 'Are you sure to delete the attachment?',

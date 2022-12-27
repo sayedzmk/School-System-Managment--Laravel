@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
 @section('title')
-{{ trans('fees_trans.Tuition fee') }}
+{{ trans('Students_trans.Exchange bond') }}
 @stop
 @endsection
 @section('page-header')
 <!-- breadcrumb -->
 @section('PageTitle')
-{{ trans('fees_trans.Tuition fee') }}
+{{ trans('Students_trans.Exchange bond') }}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -34,23 +34,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($ProcessingFees as $ProcessingFee)
+                                        @foreach ($payment_students as $payment_student)
                                             <tr>
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $ProcessingFee->student->name }}</td>
-                                                <td>{{ number_format($ProcessingFee->amount, 2) }}</td>
-                                                <td>{{ $ProcessingFee->description }}</td>
+                                                <td>{{ $payment_student->student->name }}</td>
+                                                <td>{{ number_format($payment_student->amount, 2) }}</td>
+                                                <td>{{ $payment_student->description }}</td>
                                                 <td>
-                                                    <a href="{{ route('ProcessingFee.edit', $ProcessingFee->id) }}"
+                                                    <a href="{{ route('payment.edit', $payment_student->id) }}"
                                                         class="btn btn-info btn-sm" role="button"
                                                         aria-pressed="true"><i class="fa fa-edit"></i></a>
                                                     <button type="button" class="btn btn-danger btn-sm"
                                                         data-toggle="modal"
-                                                        data-target="#Delete_receipt{{ $ProcessingFee->id }}"><i
+                                                        data-target="#Delete_receipt{{ $payment_student->id }}"><i
                                                             class="fa fa-trash"></i></button>
                                                 </td>
                                             </tr>
-                                            @include('pages.ProcessingFee.Delete')
+                                            @include('pages.Payment.Delete')
                                         @endforeach
                                 </table>
                             </div>
