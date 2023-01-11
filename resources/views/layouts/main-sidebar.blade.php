@@ -163,7 +163,6 @@
                             <li> <a href="{{ route('fees_invoice.index') }}">{{ trans('fees_trans.Invoices') }}</a> </li>
                             <li> <a href="{{route('receipt_student.index')}}"> {{ trans('Students_trans.receipt') }}</a> </li>
                             <li> <a href="{{route('ProcessingFee.index')}}"> {{ trans('Students_trans.fee_exclusion') }}</a> </li>
-                            <li> <a href="{{route('ProcessingFee.index')}}"> {{ trans('Students_trans.fee_exclusion') }}</a> </li>
                             <li> <a href="{{route('payment.index')}}"> {{ trans('Students_trans.Exchange bond') }}</a> </li>
 
                         </ul>
@@ -178,9 +177,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Attendance-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="fontawesome-icon.html">font Awesome</a> </li>
-                            <li> <a href="themify-icons.html">Themify icons</a> </li>
-                            <li> <a href="weather-icon.html">Weather icons</a> </li>
+                            <li> <a href="{{route('attendance.index')}}"> {{ trans('main_trans.List Students') }}</a> </li>
                         </ul>
                     </li>
 

@@ -42,6 +42,11 @@ return [
     'Are you sure to cancel the graduation process?'=>'Are you sure to cancel the graduation process?',
     'receipt'=>'Receipt',
     'receipt_edit'=>'Receipt Edit',
+    'Attendance and absence list for students'=>'Attendance and absence list for students',
+    'today_date'=>'Date',
+    'absence'=>'Absence',
+    'Presence'=>'Presence'
+
 
 
 

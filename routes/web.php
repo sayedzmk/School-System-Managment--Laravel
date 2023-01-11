@@ -52,11 +52,12 @@ Route::group(
         ##################Students###############
         Route::group(['namespace' => 'Student'], function () {
             Route::resource('/student', 'StudentController');
-            Route::resource('promotion', 'StudentPromotionController');
+            Route::resource('/promotion', 'StudentPromotionController');
             Route::resource('Graduated', 'StudentGraduatedController');
             Route::resource('receipt_student', 'ReceiptStudentController');
             Route::resource('ProcessingFee', 'ProcessingFeeStudentController');
             Route::resource('payment', 'PymentStudentController');
+            Route::resource('/attendance', 'AttendanceStudentController');
             Route::get('/Get_classrooms/{id}', 'StudentController@Get_classrooms');
             Route::get('/Get_Sections/{id}', 'StudentController@Get_Sections');
             Route::post('Upload_attachment', 'StudentController@Uploade_Attachment')->name('Upload_attachment');

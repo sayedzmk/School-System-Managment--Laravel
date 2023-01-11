@@ -41,6 +41,11 @@ return [
     'Are you sure to cancel the graduation process?'=>'هل انت متاكد من الغاء عملية التخرج ؟',
     'receipt'=>'سندات القبض',
     'receipt_edit'=>'تعديل سندات القبض',
+    'Attendance and absence list for students'=>'قائمة الحضور والغياب للطلاب',
+    'today_date'=>'تاريخ اليوم',
+    'absence'=>'غياب',
+    'Presence'=>'خضور',
+
 
 
 ];
