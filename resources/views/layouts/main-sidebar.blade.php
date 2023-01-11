@@ -160,10 +160,14 @@
                         </a>
                         <ul id="Accounts-menu" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{ route('fees.index') }}">{{ trans('main_trans.study fees') }}</a> </li>
-                            <li> <a href="{{ route('fees_invoice.index') }}">{{ trans('fees_trans.Invoices') }}</a> </li>
-                            <li> <a href="{{route('receipt_student.index')}}"> {{ trans('Students_trans.receipt') }}</a> </li>
-                            <li> <a href="{{route('ProcessingFee.index')}}"> {{ trans('Students_trans.fee_exclusion') }}</a> </li>
-                            <li> <a href="{{route('payment.index')}}"> {{ trans('Students_trans.Exchange bond') }}</a> </li>
+                            <li> <a href="{{ route('fees_invoice.index') }}">{{ trans('fees_trans.Invoices') }}</a>
+                            </li>
+                            <li> <a href="{{ route('receipt_student.index') }}">
+                                    {{ trans('Students_trans.receipt') }}</a> </li>
+                            <li> <a href="{{ route('ProcessingFee.index') }}">
+                                    {{ trans('Students_trans.fee_exclusion') }}</a> </li>
+                            <li> <a href="{{ route('payment.index') }}">
+                                    {{ trans('Students_trans.Exchange bond') }}</a> </li>
 
                         </ul>
                     </li>
@@ -177,10 +181,22 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Attendance-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('attendance.index')}}"> {{ trans('main_trans.List Students') }}</a> </li>
+                            <li> <a href="{{ route('attendance.index') }}">
+                                    {{ trans('main_trans.List Students') }}</a> </li>
                         </ul>
                     </li>
-
+                    <!-- Subjects-->
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Exams-icon">
+                            <div class="pull-left"><i class="fas fa-book-open"></i><span
+                                    class="right-nav-text">{{ trans('main_trans.subject') }}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+                        <ul id="Exams-icon" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{ route('subjects.index') }}">قائمة المواد</a> </li>
+                        </ul>
+                    </li>
                     <!-- Exams-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Exams-icon">

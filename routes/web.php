@@ -70,5 +70,10 @@ Route::group(
             Route::resource('/fees', 'AccountsController');
             Route::resource('/fees_invoice', 'FeeInvoiceController');
         });
+
+        //==============================Subjects============================
+        Route::group(['namespace' => 'Subject'], function () {
+            Route::resource('subjects', 'SubjectController');
+        });
     }
 );

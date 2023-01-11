@@ -17,6 +17,7 @@ return [
     'academic_year' => 'Academic year',
     'Student_information' => 'Student information',
     'Grade' => 'Grade',
+    'subject' => 'Subject',
     'classrooms' => 'classrooms',
     'section' => 'Section',
     'Processes' => 'Processes',
