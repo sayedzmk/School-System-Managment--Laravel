@@ -33,8 +33,8 @@ class SubjectRepository implements SubjectRepositoryInterface
             $subjects->classroom_id = $request->Class_id;
             $subjects->teacher_id = $request->teacher_id;
             $subjects->save();
-            toastr()->success(trans('messages.success'));
-            return redirect()->route('subjects.create');
+            toastr()->success(trans('message.successs'));
+            return redirect()->route('subjects.index');
         }
         catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -60,8 +60,8 @@ class SubjectRepository implements SubjectRepositoryInterface
             $subjects->classroom_id = $request->Class_id;
             $subjects->teacher_id = $request->teacher_id;
             $subjects->save();
-            toastr()->success(trans('messages.Update'));
-            return redirect()->route('subjects.create');
+            toastr()->success(trans('message.Update'));
+            return redirect()->route('subjects.index');
         }
         catch (\Exception $e) {
             return redirect()->back()->with(['error' => $e->getMessage()]);
@@ -72,7 +72,7 @@ class SubjectRepository implements SubjectRepositoryInterface
     {
         try {
             Subject::destroy($request->id);
-            toastr()->error(trans('messages.Delete'));
+            toastr()->error(trans('message.Delete'));
             return redirect()->back();
         }
 
