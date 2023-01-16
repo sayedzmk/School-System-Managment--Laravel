@@ -36,18 +36,18 @@
                                 <div class="form-row">
 
                                     <div class="col">
-                                        <label for="title">اسم الامتحان باللغة العربية</label>
+                                        <label for="title">{{trans('Exam.Exam_name_in_Arabic')}}</label>
                                         <input type="text" name="Name_ar" value="{{ $exam->getTranslation('name', 'ar') }}" class="form-control">
                                         <input type="hidden" name="id" value="{{$exam->id}}">
                                     </div>
 
                                     <div class="col">
-                                        <label for="title">اسم الامتحان باللغة الانجليزية</label>
+                                        <label for="title">{{trans('Exam.Exam_name_in_English')}}</label>
                                         <input type="text" name="Name_en" value="{{ $exam->getTranslation('name', 'en') }}" class="form-control">
                                     </div>
 
                                     <div class="col">
-                                        <label for="title">الترم</label>
+                                        <label for="title">{{trans('Exam.Term')}}</label>
                                         <input type="number" name="term" value="{{$exam->term}}" class="form-control">
                                     </div>
 
@@ -69,7 +69,7 @@
                                     </div>
 
                                 </div>
-                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">حفظ البيانات</button>
+                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit"> {{ trans('Students_trans.submit') }}</button>
                             </form>
                         </div>
                     </div>

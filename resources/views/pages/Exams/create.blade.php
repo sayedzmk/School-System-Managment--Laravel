@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
 @section('title')
-    اضافة امتحان جديد
+{{trans('Exam.Add_a_new_exam')}}
 @stop
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
 @section('PageTitle')
-    اضافة امتحان جديد
+{{trans('Exam.Add_a_new_exam')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -36,17 +36,17 @@
                                 <div class="form-row">
 
                                     <div class="col">
-                                        <label for="title">اسم الامتحان باللغة العربية</label>
+                                        <label for="title">{{trans('Exam.Exam_name_in_Arabic')}}</label>
                                         <input type="text" name="Name_ar" class="form-control">
                                     </div>
 
                                     <div class="col">
-                                        <label for="title">اسم الامتحان باللغة الانجليزية</label>
+                                        <label for="title">{{trans('Exam.Exam_name_in_English')}}</label>
                                         <input type="text" name="Name_en" class="form-control">
                                     </div>
 
                                     <div class="col">
-                                        <label for="title">الترم</label>
+                                        <label for="title">{{trans('Exam.Term')}}</label>
                                         <input type="number" name="term" class="form-control">
                                     </div>
 
@@ -68,7 +68,7 @@
                                     </div>
 
                                 </div>
-                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">حفظ البيانات</button>
+                                <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">{{ trans('Students_trans.submit') }} </button>
                             </form>
                         </div>
                     </div>

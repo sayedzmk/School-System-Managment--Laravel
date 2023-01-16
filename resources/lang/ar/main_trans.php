@@ -22,6 +22,7 @@ return [
     'list_Graduate' => ' قائمة الطلاب المتخرجين',
     'Student_information' => 'معلومات الطلاب',
     'Teachers' => 'المعلمين',
+    'Quizzes'=>'الأختبارات',
     'study fees' => 'الرسوم الدراسية',
     'List_Teachers' => 'قائمة المعلمين',
     'Parents' => 'اولياء الامور',

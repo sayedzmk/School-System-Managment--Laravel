@@ -76,9 +76,9 @@ Route::group(
             Route::resource('subjects', 'SubjectController');
         });
 
-        //==============================Exams============================
-        Route::group(['namespace' => 'Exam'], function () {
-            Route::resource('Exams', 'ExamController');
+        //==============================Quizzes============================
+        Route::group(['namespace' => 'Quize'], function () {
+            Route::resource('Quizzes', 'QuizeController');
         });
     }
 );

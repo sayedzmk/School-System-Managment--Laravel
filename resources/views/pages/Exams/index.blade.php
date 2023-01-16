@@ -2,13 +2,13 @@
 @section('css')
     @toastr_css
 @section('title')
-    قائمة الامتحانات
+{{trans('Exam.List_of_exams')}}
 @stop
 @endsection
 @section('page-header')
 <!-- breadcrumb -->
 @section('PageTitle')
-    قائمة الامتحانات
+{{trans('Exam.List_of_exams')}}
 @stop
 <!-- breadcrumb -->
 @endsection
@@ -22,16 +22,16 @@
                     <div class="card card-statistics h-100">
                         <div class="card-body">
                             <a href="{{ route('Exams.create') }}" class="btn btn-success btn-sm" role="button"
-                                aria-pressed="true">اضافة امتحان جديد</a><br><br>
+                                aria-pressed="true"> {{trans('Exam.Add_a_new_exam')}}</a><br><br>
                             <div class="table-responsive">
                                 <table id="datatable" class="table  table-hover table-sm table-bordered p-0"
                                     data-page-length="50" style="text-align: center">
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>اسم الامتحان</th>
-                                            <th>الترم</th>
-                                            <th>العمليات</th>
+                                            <th> {{trans('Exam.Exam_name')}}</th>
+                                            <th>{{trans('Exam.Term')}}</th>
+                                            <th>{{ trans('Students_trans.Processes') }}</th>
                                         </tr>
                                     </thead>
                                     <tbody>

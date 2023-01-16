@@ -194,19 +194,21 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="subject" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{ route('subjects.index') }}">قائمة المواد</a> </li>
+                            <li> <a href="{{ route('subjects.index') }}"> {{trans('subject.List_of_subjects')}}
+                            </a> </li>
                         </ul>
                     </li>
                     <!-- Exams-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Exams-icon">
                             <div class="pull-left"><i class="fas fa-book-open"></i><span
-                                    class="right-nav-text">{{ trans('main_trans.Exams') }}</span></div>
+                                    class="right-nav-text">{{ trans('main_trans.Quizzes') }}</span></div>
                             <div class="pull-right"><i class="ti-plus"></i></div>
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Exams-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('Exams.index')}}">قائمة الامتحانات</a> </li>
+                            <li> <a href="{{route('Quizzes.index')}}">{{trans('quize.List_of_Quizes')}}
+                            </a> </li>
                         </ul>
                     </li>
 

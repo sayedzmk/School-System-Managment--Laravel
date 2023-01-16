@@ -24,6 +24,7 @@ return [
     'Teachers'=>'Teachers',
     'List_Teachers' => 'List Teachers',
     'Parents'=>'Parents',
+    'Quizzes'=>'Quizzes',
     'Add_Parent'=>'Add Parent',
     'List_Parents'=>'List Parents',
     'Accounts'=>'Accounts',

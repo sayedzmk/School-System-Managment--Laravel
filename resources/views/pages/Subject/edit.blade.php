@@ -35,13 +35,13 @@
                             @csrf
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="title">اسم المادة باللغة العربية</label>
+                                    <label for="title">{{trans('subject.Article_name_in_Arabic')}} </label>
                                     <input type="text" name="Name_ar"
                                         value="{{ $subject->getTranslation('name', 'ar') }}" class="form-control">
                                     <input type="hidden" name="id" value="{{ $subject->id }}">
                                 </div>
                                 <div class="col">
-                                    <label for="title">اسم المادة باللغة الانجليزية</label>
+                                    <label for="title"> {{trans('subject.Article_name_in_English')}}</label>
                                     <input type="text" name="Name_en"
                                         value="{{ $subject->getTranslation('name', 'en') }}" class="form-control">
                                 </div>
@@ -50,7 +50,7 @@
 
                             <div class="form-row">
                                 <div class="form-group col">
-                                    <label for="inputState">المرحلة الدراسية</label>
+                                    <label for="inputState"> {{trans('Students_trans.Grade')}}</label>
                                     <select class="custom-select my-1 mr-sm-2" name="Grade_id">
                                         <option selected disabled>{{ trans('Parent_trans.Choose') }}...</option>
                                         @foreach ($grades as $grade)
@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="form-group col">
-                                    <label for="inputState">الصف الدراسي</label>
+                                    <label for="inputState">  {{trans('Students_trans.classrooms')}}</label>
                                     <select name="Class_id" class="custom-select">
                                         <option value="{{ $subject->classroom->id }}">
                                             {{ $subject->classroom->Name_Class }}
@@ -71,7 +71,7 @@
                                 </div>
 
                                 <div class="form-group col">
-                                    <label for="inputState">اسم المعلم</label>
+                                    <label for="inputState">{{ trans('teacher_tans.Name_Teacher') }}</label>
                                     <select class="custom-select my-1 mr-sm-2" name="teacher_id">
                                         <option selected disabled>{{ trans('Parent_trans.Choose') }}...</option>
                                         @foreach ($teachers as $teacher)
@@ -82,8 +82,8 @@
                                     </select>
                                 </div>
                             </div>
-                            <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">حفظ
-                                البيانات
+                            <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">
+                                {{ trans('Students_trans.submit') }}
                             </button>
                         </form>
                     </div>
