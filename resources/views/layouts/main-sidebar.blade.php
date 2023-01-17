@@ -194,8 +194,8 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="subject" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{ route('subjects.index') }}"> {{trans('subject.List_of_subjects')}}
-                            </a> </li>
+                            <li> <a href="{{ route('subjects.index') }}"> {{ trans('subject.List_of_subjects') }}
+                                </a> </li>
                         </ul>
                     </li>
                     <!-- Exams-->
@@ -207,8 +207,10 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="Exams-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="{{route('Quizzes.index')}}">{{trans('quize.List_of_Quizes')}}
-                            </a> </li>
+                            <li> <a href="{{ route('Quizzes.index') }}">{{ trans('quize.List_of_Quizes') }}
+                                </a> </li>
+                            <li> <a href="{{ route('questions.index') }}">{{ trans('question.List_of_question') }}
+                                </a> </li>
                         </ul>
                     </li>
 
