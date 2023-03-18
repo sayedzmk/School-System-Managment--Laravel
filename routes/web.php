@@ -13,13 +13,25 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 | contains the "web" middleware group. Now create something great!
 |
  */
-Auth::routes();
+// Auth::routes();
 
-Route::group(['middleware' => ['guest']], function () {
-    Route::get('/', function () {
-        return view('auth.login');
-    });
+// Route::group(['middleware' => ['guest']], function () {
+//     Route::get('/', function () {
+//         return view('auth.login');
+//     });
+// });
+Route::get('/', 'HomeController@index')->name('selection');
+
+Route::group(['namespace' => 'Auth'], function () {
+
+    Route::get('/login/{type}','LoginController@loginForm')->middleware('guest')->name('login.show');
+
+    Route::post('/login','LoginController@login')->name('login');
+
+    Route::get('/logout/{type}', 'LoginController@logout')->name('logout');
+
 });
+
 
 Route::group(
     [
@@ -27,8 +39,8 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath', 'auth'],
     ],
     function () {
-        Route::get('/dashboard', 'HomeController@index')->name('dashboard');
-        ###################SchoolGrades###############
+        Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+                ###################SchoolGrades###############
         Route::group(['namespace' => 'SchoolGrades'], function () {
             Route::resource('/school_garde', 'SchoolGradeController');
         });

@@ -4,6 +4,10 @@ return [
 
     'Dashboard'=>'Dashboard',
     'Dashboard_page'=>'Dashboard',
+    'Dashboard_page_admin'=>'Dashboard Admin',
+    'Dashboard_page_student'=>'Dashboard Student',
+    'Dashboard_page_paraent'=>'Dashboard Paraent',
+    'Dashboard_page_teacher'=>'Dashboard Teacher',
     'Main_title' => 'School Management Program',
     'Programname' => 'School Management Program',
     'change_language'=>'language',
@@ -34,6 +38,7 @@ return [
     'Onlineclasses'=>'Online classes',
     'Settings'=>'Settings',
     'Users'=>'Users',
+    'Logout'=>'Logout',
 
 
     'Copyright' => 'Copyright',

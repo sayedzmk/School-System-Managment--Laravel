@@ -4,6 +4,10 @@ return [
 
     'Dashboard' => 'الرئيسية',
     'Dashboard_page' => 'لوحة التحكم',
+    'Dashboard_page_admin' => ' لوحة تحكم الأدمن',
+    'Dashboard_page_student' => ' لوحة تحكم الطلاب',
+    'Dashboard_page_paraent' => ' لوحة تحكم ولى الأمر',
+    'Dashboard_page_teacher' => ' لوحة تحكم المعلم',
     'Main_title' => 'برنامج  لادارة المدارس',
     'Programname' => 'برنامج  لادارة المدارس',
     'change_language' => 'تغير اللغة',
@@ -37,5 +41,7 @@ return [
     'Users' => 'المستخدمين',
     'Copyright' => 'جميع الحقوق محفوظة ',
     'Name_Programer' => 'سيد محمد سيد',
+    'Logout'=>'تسجيل الخروج',
+
 
 ];
